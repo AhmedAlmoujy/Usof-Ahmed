@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, Folder } from 'lucide-react';
 
@@ -20,10 +21,17 @@ Object.entries(allImages).forEach(([path, url]) => {
 const projectNames = Object.keys(projectData);
 
 export default function ProjectShowcase() {
+  const { t, i18n } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeProject, setActiveProject] = useState(projectNames[0]);
 
   if (projectNames.length === 0) return null;
+
+  const formatProjectName = (name) => {
+    // If Arabic, we might want to keep the name as is or provide a mapping
+    // For now, let's just capitalize/replace for EN and keep it clean for both
+    return name.replace(/-/g, ' ');
+  };
 
   return (
     <section className="section" style={{ background: 'var(--bg-deep-space)', position: 'relative' }}>
@@ -36,10 +44,10 @@ export default function ProjectShowcase() {
           style={{ textAlign: 'center', marginBottom: '4rem' }}
         >
           <h2 className="text-gradient-thunder" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>
-            Portfolio Projects
+            {t('projects.title')}
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
-            A curated selection of high-performance SEO projects, organized by industry and brand.
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
@@ -56,7 +64,7 @@ export default function ProjectShowcase() {
                   border: `1px solid ${activeProject === name ? 'var(--accent-cyan)' : 'rgba(138, 43, 226, 0.2)'}`,
                   borderRadius: '12px',
                   color: activeProject === name ? 'var(--accent-cyan)' : 'var(--text-primary)',
-                  textAlign: 'left',
+                  textAlign: i18n.language === 'ar' ? 'right' : 'left',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.75rem',
@@ -66,11 +74,15 @@ export default function ProjectShowcase() {
                   fontSize: '1rem',
                   fontWeight: activeProject === name ? '600' : '400'
                 }}
-                whileHover={{ x: 5, background: 'rgba(138, 43, 226, 0.15)' }}
+                whileHover={{ x: i18n.language === 'ar' ? -5 : 5, background: 'rgba(138, 43, 226, 0.15)' }}
               >
                 <Folder size={18} color={activeProject === name ? 'var(--accent-cyan)' : 'var(--accent-purple)'} />
-                {name.replace(/-/g, ' ')}
-                {activeProject === name && <ChevronRight size={18} style={{ marginLeft: 'auto' }} />}
+                {formatProjectName(name)}
+                {activeProject === name && <ChevronRight size={18} style={{ 
+                  marginLeft: i18n.language === 'ar' ? '0' : 'auto',
+                  marginRight: i18n.language === 'ar' ? 'auto' : '0',
+                  transform: i18n.language === 'ar' ? 'rotate(180deg)' : 'none'
+                }} />}
               </motion.button>
             ))}
           </div>
@@ -86,7 +98,7 @@ export default function ProjectShowcase() {
                 transition={{ duration: 0.4 }}
               >
                 <h3 className="text-gradient-galaxy" style={{ fontSize: '2rem', marginBottom: '2rem', textTransform: 'capitalize' }}>
-                  {activeProject.replace(/-/g, ' ')} Performance
+                  {formatProjectName(activeProject)} {t('projects.performance')}
                 </h3>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1.5rem' }}>
@@ -145,7 +157,8 @@ export default function ProjectShowcase() {
               style={{
                 position: 'absolute',
                 top: '2rem',
-                right: '2rem',
+                right: i18n.language === 'ar' ? 'auto' : '2rem',
+                left: i18n.language === 'ar' ? '2rem' : 'auto',
                 background: 'rgba(255,255,255,0.1)',
                 border: '1px solid rgba(255,255,255,0.2)',
                 borderRadius: '50%',

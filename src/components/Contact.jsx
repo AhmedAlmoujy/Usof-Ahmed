@@ -1,7 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail, Phone } from 'lucide-react';
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section className="section" style={{ paddingBottom: '2rem' }}>
       <div className="container">
@@ -13,9 +16,9 @@ export default function Contact() {
           className="glass-panel"
           style={{ padding: '4rem 2rem', textAlign: 'center', background: 'linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(0, 255, 255, 0.05))', border: '1px solid rgba(0, 255, 255, 0.2)' }}
         >
-          <h2 className="text-gradient-thunder" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Let's Work Together</h2>
+          <h2 className="text-gradient-thunder" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{t('contact.title')}</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontSize: '1.1rem' }}>
-            Ready to transform your website into a revenue engine? Reach out today.
+            {t('contact.subtitle')}
           </p>
           
           <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -30,7 +33,7 @@ export default function Contact() {
               </div>
               <span style={{ fontSize: '0.9rem' }}>ahmedusof0@gmail.com</span>
             </motion.a>
-
+ 
             <motion.a 
               href="tel:+201023652688"
               whileHover={{ scale: 1.05, y: -5 }}
@@ -46,7 +49,7 @@ export default function Contact() {
         </motion.div>
         
         <div style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
-          &copy; {new Date().getFullYear()} Usof Ahmed. All rights reserved.
+          &copy; {new Date().getFullYear()} {t('contact.copy')}
         </div>
       </div>
     </section>

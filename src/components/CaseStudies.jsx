@@ -1,67 +1,5 @@
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-
-const caseStudies = [
-  {
-    title: 'Electrical Appliances Website SEO Recovery',
-    overview: 'Severe SEO disruption caused by a malicious freelancer. Major technical issues affecting product visibility.',
-    challenges: ['Domain removed from GSC', 'Corrupted sitemaps', '300+ unindexed products', 'Traffic drop'],
-    strategies: ['Reinstatement in GSC', 'URL architecture audit', 'New XML sitemap', 'Manual re-archiving'],
-    results: [
-      { label: 'New visitors', value: '+372%' },
-      { label: 'Returning users', value: '197%' },
-      { label: 'Clicks', value: '519 to 1300' },
-      { label: 'Impressions', value: '14.7k to 65k' }
-    ]
-  },
-  {
-    title: 'Building Authority for a New Store in a Saturated Market',
-    overview: 'SEO strategy for a new construction industry website with an identical brand name to 4 competitors.',
-    challenges: ['Brand name saturation', 'Extreme market competition', 'Zero initial authority'],
-    strategies: ['User-Intent Content', 'Internal Linking Architecture', 'High-Authority Backlinks', 'Content Credibility'],
-    results: [
-      { label: 'Search Impressions', value: '38,000' },
-      { label: 'Targeted Clicks', value: '688' },
-      { label: 'Avg Position', value: '16.6' },
-      { label: 'Organic Visit Increase', value: '+48.7%' }
-    ]
-  },
-  {
-    title: 'Revitalizing an Herbal Store via User-Intent SEO',
-    overview: 'Addressing SEO obstacles and aligning content with user intent for an established herbal store.',
-    challenges: ['Technical SEO issues', 'Low search volume keywords', 'Weak product descriptions'],
-    strategies: ['Intent-focused content plan', 'Improved product pages', 'Website reorganization', 'Manual indexing'],
-    results: [
-      { label: 'Total Sales (SAR)', value: '167k+' },
-      { label: 'Sales Growth', value: '+89.5%' },
-      { label: 'Organic Sessions', value: '+71.6%' },
-      { label: 'Conversion Rate', value: '+19.8%' }
-    ]
-  },
-  {
-    title: 'Building an SEO Foundation for a Niche Sweets Store',
-    overview: 'Improving visibility and organic performance for a dried sweets e-commerce site.',
-    challenges: ['Unoptimized content', 'Unclear site structure', 'Weak backlink profile'],
-    strategies: ['Keyword research', 'Homepage optimization', 'Category restructuring', 'Internal linking'],
-    results: [
-      { label: 'Keywords Ranked', value: '658 → 1,500' },
-      { label: 'Referring Domains', value: '+166%' },
-      { label: 'Organic Sessions', value: '+31.8%' },
-      { label: 'Revenue from Organic', value: '+48.83%' }
-    ]
-  },
-  {
-    title: 'SEO Recovery for Motorcycle Accessories E-commerce',
-    overview: 'Domain migration failure leading to zero organic presence for a new motorcycle store.',
-    challenges: ['No GSC connection', 'No sitemap/indexing', 'Invisible product pages'],
-    strategies: ['GSC Validation', 'Manual re-indexing', 'Product page optimization', 'Internal linking'],
-    results: [
-      { label: 'Clicks', value: '+1700' },
-      { label: 'Impressions', value: '+112k' },
-      { label: 'Returning customer', value: '52%' },
-      { label: 'Revenue', value: '+237k' }
-    ]
-  }
-];
 
 const Card = ({ study, index }) => {
   return (
@@ -90,6 +28,9 @@ const Card = ({ study, index }) => {
 };
 
 export default function CaseStudies() {
+  const { t } = useTranslation();
+  const caseStudies = t('caseStudies', { returnObjects: true });
+
   return (
     <section className="section" style={{ background: 'linear-gradient(to bottom, transparent, rgba(10,5,21,0.8))' }}>
       <div className="container">
@@ -100,7 +41,7 @@ export default function CaseStudies() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Proven Results
+          {t('results.title')}
         </motion.h2>
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>

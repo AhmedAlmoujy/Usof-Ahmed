@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageCircle } from 'lucide-react';
 import profileImage from '../assets/usof-ahmed.jpg';
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div className="container" style={{ textAlign: 'center' }}>
@@ -21,7 +24,7 @@ export default function Hero() {
           >
             <img 
               src={profileImage} 
-              alt="Usof Ahmed" 
+              alt={t('hero.title')} 
               style={{
                 width: '180px',
                 height: '180px',
@@ -41,7 +44,7 @@ export default function Hero() {
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Usof Ahmed
+            {t('hero.title')}
           </motion.h1>
           <motion.h2 
             className="text-gradient-galaxy"
@@ -50,7 +53,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Expert SEO Specialist
+            {t('hero.subtitle')}
           </motion.h2>
           <motion.p 
             style={{ fontSize: '1.125rem', lineHeight: 1.6, color: 'var(--text-secondary)', marginBottom: '3rem' }}
@@ -58,9 +61,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            As a data-driven SEO Specialist with 1+ year of experience, I transform websites from 
-            digital assets into powerful, self-sustaining revenue engines. My expertise lies in
-            moving beyond basic content creation to implement strategic technical SEO, build high-authority backlink profiles, and craft user-intent-focused content strategies that deliver measurable, profitable results.
+            {t('hero.bio')}
           </motion.p>
           
           <motion.div 
@@ -75,7 +76,7 @@ export default function Hero() {
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0, 255, 255, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px var(--accent-cyan)' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(0, 255, 255, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
-              <Mail size={20} /> Email
+              <Mail size={20} /> {t('hero.cta.email')}
             </a>
             <a 
               href="tel:+201023652688" 
@@ -83,7 +84,7 @@ export default function Hero() {
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(138, 43, 226, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px var(--accent-purple)' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(138, 43, 226, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
-              <Phone size={20} /> Call
+              <Phone size={20} /> {t('hero.cta.call')}
             </a>
             <a 
               href="https://wa.me/201023652688" 
@@ -92,7 +93,7 @@ export default function Hero() {
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(37, 211, 102, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px #25D366' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(37, 211, 102, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
-              <MessageCircle size={20} /> WhatsApp
+              <MessageCircle size={20} /> {t('hero.cta.whatsapp')}
             </a>
             <a 
               href="https://www.linkedin.com/in/usof-ahmed-38215a260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
@@ -101,7 +102,7 @@ export default function Hero() {
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px #0a66c2' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> {t('hero.cta.linkedin')}
             </a>
           </motion.div>
         </motion.div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
 :root {
   /* Thunder & Galaxy Colors */
   --bg-deep-space: #030008;
@@ -15,7 +17,7 @@
   --glass-border: rgba(138, 43, 226, 0.2);
   --glass-highlight: rgba(0, 255, 255, 0.1);
 
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Cairo', system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: var(--text-primary);
   background-color: var(--bg-deep-space);
   
@@ -38,7 +40,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', 'Cairo', sans-serif;
   font-weight: 700;
   line-height: 1.2;
 }
