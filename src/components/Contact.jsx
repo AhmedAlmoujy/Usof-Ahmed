@@ -35,7 +35,7 @@ export default function Contact() {
             </motion.a>
  
             <motion.a 
-              href="tel:+201023652688"
+              href="tel:+201507517416"
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
               style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem', color: 'var(--text-primary)' }}
@@ -43,7 +43,7 @@ export default function Contact() {
               <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(138, 43, 226, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--accent-purple)' }}>
                 <Phone size={24} color="var(--accent-purple)" />
               </div>
-              <span style={{ fontSize: '0.9rem' }}>+20 10 23652688</span>
+              <span style={{ fontSize: '0.9rem' }}>+20 150 751 7416</span>
             </motion.a>
           </div>
         </motion.div>

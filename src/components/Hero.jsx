@@ -70,40 +70,79 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            <a 
+            <motion.a 
               href="mailto:ahmedusof0@gmail.com" 
+              animate={{ 
+                y: [0, 8, 0],
+                x: [0, -5, 0]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity, 
+                ease: "easeInOut"
+              }}
               style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', background: 'rgba(0, 255, 255, 0.1)', border: '1px solid var(--accent-cyan)', borderRadius: '30px', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0, 255, 255, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px var(--accent-cyan)' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(0, 255, 255, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
               <Mail size={20} /> {t('hero.cta.email')}
-            </a>
-            <a 
-              href="tel:+201023652688" 
+            </motion.a>
+            <motion.a 
+              href="tel:+201507517416" 
+              animate={{ 
+                y: [0, -10, 0],
+                x: [0, 5, 0]
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "easeInOut",
+                delay: 0.2
+              }}
               style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', background: 'rgba(138, 43, 226, 0.1)', border: '1px solid var(--accent-purple)', borderRadius: '30px', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(138, 43, 226, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px var(--accent-purple)' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(138, 43, 226, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
               <Phone size={20} /> {t('hero.cta.call')}
-            </a>
-            <a 
-              href="https://wa.me/201023652688" 
+            </motion.a>
+            <motion.a 
+              href="https://wa.me/201507517416" 
               target="_blank" rel="noopener noreferrer"
+              animate={{ 
+                y: [0, 12, 0],
+                x: [0, -8, 0]
+              }}
+              transition={{ 
+                duration: 5, 
+                repeat: Infinity, 
+                ease: "easeInOut",
+                delay: 0.5
+              }}
               style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', background: 'rgba(37, 211, 102, 0.1)', border: '1px solid #25D366', borderRadius: '30px', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(37, 211, 102, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px #25D366' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(37, 211, 102, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
               <MessageCircle size={20} /> {t('hero.cta.whatsapp')}
-            </a>
-            <a 
+            </motion.a>
+            <motion.a 
               href="https://www.linkedin.com/in/usof-ahmed-38215a260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
               target="_blank" rel="noopener noreferrer"
+              animate={{ 
+                y: [0, -15, 0],
+                x: [0, 10, 0]
+              }}
+              transition={{ 
+                duration: 6, 
+                repeat: Infinity, 
+                ease: "easeInOut",
+                delay: 0.8
+              }}
               style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.75rem 1.5rem', background: 'rgba(10, 102, 194, 0.1)', border: '1px solid #0a66c2', borderRadius: '30px', color: 'var(--text-primary)', transition: 'all 0.3s ease' }}
               onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.3)'; e.currentTarget.style.boxShadow = '0 0 15px #0a66c2' }}
               onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.1)'; e.currentTarget.style.boxShadow = 'none' }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> {t('hero.cta.linkedin')}
-            </a>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

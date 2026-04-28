@@ -6,6 +6,7 @@ import CaseStudies from './components/CaseStudies';
 import ProjectShowcase from './components/ProjectShowcase';
 import Contact from './components/Contact';
 import LanguageSwitcher from './components/LanguageSwitcher';
+import FloatingContacts from './components/FloatingContacts';
 import './index.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <ProjectShowcase />
         <Contact />
       </div>
+      <FloatingContacts />
     </>
   );
 }

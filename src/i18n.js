@@ -8,7 +8,7 @@ const resources = {
       hero: {
         title: "Usof Ahmed",
         subtitle: "Expert SEO Specialist",
-        bio: "As a data-driven SEO Specialist with 1+ year of experience, I transform websites from digital assets into powerful, self-sustaining revenue engines. My expertise lies in moving beyond basic content creation to implement strategic technical SEO, build high-authority backlink profiles, and craft user-intent-focused content strategies that deliver measurable, profitable results.",
+        bio: "Results-driven SEO Specialist & Team Leader with 1.5+ years of progressive experience across e-commerce and service-based industries. Proven track record of leading crossfunctional teams, developing comprehensive SEO roadmaps, and driving measurable organic growth. Hands-on expertise in technical SEO, on-page optimization, content strategy, and data analysis using tools like SEMrush, Google Analytics, and Screaming Frog. Experienced across multiple CMS platforms including WordPress, Salla, Zid, and Shopify — with a strong ability to align SEO strategies with broader business goals.",
         cta: {
           email: "Email",
           call: "Call",
@@ -117,7 +117,7 @@ const resources = {
       hero: {
         title: "يوسف أحمد",
         subtitle: "خبير تحسين محركات البحث (SEO)",
-        bio: "بصفتي خبيراً في تحسين محركات البحث (SEO) يعتمد على البيانات مع خبرة تزيد عن عام، أقوم بتحويل المواقع الإلكترونية من مجرد أصول رقمية إلى محركات قوية ومستدامة لتحقيق الإيرادات. تكمن خبرتي في تجاوز إنشاء المحتوى الأساسي لتنفيذ الـ SEO التقني الاستراتيجي، وبناء ملفات باك لينك قوية، وصياغة استراتيجيات محتوى تركز على نية المستخدم لتقديم نتائج ملموسة ومربحة.",
+        bio: "خبير تحسين محركات البحث (SEO) وقائد فريق يركز على النتائج، مع خبرة تزيد عن 1.5 عام في قطاعات التجارة الإلكترونية والخدمات. سجل حافل في قيادة الفرق متعددة الوظائف، وتطوير خارطة طريق شاملة للسيو، وتحقيق نمو عضوي ملموس. خبرة عملية في السيو التقني، وتحسين الصفحات (On-page)، واستراتيجية المحتوى، وتحليل البيانات باستخدام أدوات مثل SEMrush و Google Analytics و Screaming Frog. خبير في التعامل مع منصات إدارة المحتوى المتعددة بما في ذلك WordPress و سلة (Salla) و زد (Zid) و Shopify — مع قدرة قوية على مواءمة استراتيجيات السيو مع أهداف العمل الأوسع.",
         cta: {
           email: "البريد",
           call: "اتصال",

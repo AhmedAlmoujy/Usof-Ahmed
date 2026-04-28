@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('./assets/fonts/thmanyah/thmanyah-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Thmanyah';
+  src: url('./assets/fonts/thmanyah/thmanyah-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ThmanyahDisplay';
+  src: url('./assets/fonts/thmanyah/thmanyah-display-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Thunder & Galaxy Colors */
   --bg-deep-space: #030008;
@@ -17,14 +41,13 @@
   --glass-border: rgba(138, 43, 226, 0.2);
   --glass-highlight: rgba(0, 255, 255, 0.1);
 
-  font-family: 'Inter', 'Cairo', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: var(--text-primary);
   background-color: var(--bg-deep-space);
-  
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir="rtl"], [lang="ar"] {
+  font-family: 'Thmanyah', 'Cairo', sans-serif !important;
 }
 
 * {
@@ -40,9 +63,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
   line-height: 1.2;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  font-family: 'ThmanyahDisplay', 'Thmanyah', 'Cairo', sans-serif;
 }
 
 a {

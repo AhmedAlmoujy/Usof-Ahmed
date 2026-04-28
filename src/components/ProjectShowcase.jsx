@@ -51,44 +51,51 @@ export default function ProjectShowcase() {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '2rem' }}>
-          {/* Project Navigation (Folders) */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {/* Project Navigation (Horizontal Row) */}
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'row', 
+            gap: '1rem', 
+            overflowX: 'auto', 
+            paddingBottom: '1rem',
+            paddingRight: '0.5rem',
+            paddingLeft: '0.5rem',
+            scrollbarWidth: 'thin',
+            scrollbarColor: 'var(--accent-purple) transparent',
+            WebkitOverflowScrolling: 'touch'
+          }}>
             {projectNames.map((name) => (
               <motion.button
                 key={name}
                 onClick={() => setActiveProject(name)}
                 style={{
-                  padding: '1rem 1.5rem',
+                  padding: '0.75rem 1.25rem',
                   background: activeProject === name ? 'rgba(138, 43, 226, 0.2)' : 'rgba(15, 10, 30, 0.4)',
                   border: `1px solid ${activeProject === name ? 'var(--accent-cyan)' : 'rgba(138, 43, 226, 0.2)'}`,
                   borderRadius: '12px',
                   color: activeProject === name ? 'var(--accent-cyan)' : 'var(--text-primary)',
-                  textAlign: i18n.language === 'ar' ? 'right' : 'left',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.75rem',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   textTransform: 'capitalize',
-                  fontSize: '1rem',
-                  fontWeight: activeProject === name ? '600' : '400'
+                  fontSize: '0.95rem',
+                  fontWeight: activeProject === name ? '600' : '400',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0
                 }}
-                whileHover={{ x: i18n.language === 'ar' ? -5 : 5, background: 'rgba(138, 43, 226, 0.15)' }}
+                whileHover={{ y: -3, background: 'rgba(138, 43, 226, 0.15)' }}
               >
                 <Folder size={18} color={activeProject === name ? 'var(--accent-cyan)' : 'var(--accent-purple)'} />
                 {formatProjectName(name)}
-                {activeProject === name && <ChevronRight size={18} style={{ 
-                  marginLeft: i18n.language === 'ar' ? '0' : 'auto',
-                  marginRight: i18n.language === 'ar' ? 'auto' : '0',
-                  transform: i18n.language === 'ar' ? 'rotate(180deg)' : 'none'
-                }} />}
               </motion.button>
             ))}
           </div>
 
           {/* Project Images Grid */}
-          <div className="glass-panel" style={{ padding: '2rem', minHeight: '500px' }}>
+          <div className="glass-panel" style={{ padding: '2rem', minHeight: '400px' }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeProject}
