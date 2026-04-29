@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-// Import all png images from the drive_images folder dynamically
-const images = import.meta.glob('../assets/drive_images/**/*.png', { eager: true, import: 'default' });
+// Import all images from the drive_images folder dynamically
+const pngImages = import.meta.glob('../assets/drive_images/**/*.png', { eager: true, import: 'default' });
+const jpegImages = import.meta.glob('../assets/drive_images/**/*.jpeg', { eager: true, import: 'default' });
+const jpgImages = import.meta.glob('../assets/drive_images/**/*.jpg', { eager: true, import: 'default' });
+const images = { ...pngImages, ...jpegImages, ...jpgImages };
 const imageUrls = Object.values(images);
 
 export default function ResultsGallery() {

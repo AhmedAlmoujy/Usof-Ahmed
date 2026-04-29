@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, Folder } from 'lucide-react';
 
-const allImages = import.meta.glob('../assets/drive_images/**/*.png', { eager: true, import: 'default' });
+const pngImages = import.meta.glob('../assets/drive_images/**/*.png', { eager: true, import: 'default' });
+const jpegImages = import.meta.glob('../assets/drive_images/**/*.jpeg', { eager: true, import: 'default' });
+const jpgImages = import.meta.glob('../assets/drive_images/**/*.jpg', { eager: true, import: 'default' });
+const allImages = { ...pngImages, ...jpegImages, ...jpgImages };
 
 // Group images by folder
 const projectData = {};

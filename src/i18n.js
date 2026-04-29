@@ -35,7 +35,18 @@ const resources = {
           referringDomains: "Referring Domains",
           revenueFromOrganic: "Revenue from Organic",
           revenue: "Revenue",
-          returningCustomer: "Returning customer"
+          returningCustomer: "Returning customer",
+          organicClicksIncrease: "Organic Clicks Increase",
+          organicImpressionsIncrease: "Organic Impressions Increase",
+          totalSalesNet: "Total Sales (Net)",
+          totalOrders: "Total Orders",
+          googleClicks: "Google Clicks",
+          googleImpressions: "Google Impressions",
+          avgCTR: "Avg CTR",
+          avgPosition2: "Avg Position",
+          organicRevenue: "Organic Revenue",
+          organicConversions: "Organic Conversions",
+          salesGrowthPct: "Sales Growth"
         }
       },
       projects: {
@@ -108,6 +119,18 @@ const resources = {
             { label: 'Returning customer', value: '52%' },
             { label: 'Revenue', value: '+237k' }
           ]
+        },
+        {
+          title: 'Full-Funnel SEO Growth for E-commerce Store',
+          overview: 'Comprehensive SEO strategy driving organic sessions, search visibility, and revenue growth across all channels.',
+          challenges: ['Stagnant organic traffic', 'Low search impressions', 'Weak conversion funnel', 'Underperforming organic revenue'],
+          strategies: ['Technical SEO audit', 'Content-driven keyword expansion', 'Conversion rate optimization', 'Search Console performance tuning'],
+          results: [
+            { label: 'Organic Clicks', value: '+15.34%' },
+            { label: 'Organic Impressions', value: '+24.88%' },
+            { label: 'Total Sales', value: 'SAR 2,701,039 (+21.83%)' },
+            { label: 'Total Orders', value: '11,886' }
+          ]
         }
       ]
     }
@@ -144,7 +167,18 @@ const resources = {
           referringDomains: "النطاقات المحيلة",
           revenueFromOrganic: "الأرباح من البحث المجاني",
           revenue: "أرباح",
-          returningCustomer: "عملاء عائدون"
+          returningCustomer: "عملاء عائدون",
+          organicClicksIncrease: "زيادة النقرات المجانية",
+          organicImpressionsIncrease: "زيادة مرات الظهور المجانية",
+          totalSalesNet: "إجمالي المبيعات (صافي)",
+          totalOrders: "إجمالي الطلبات",
+          googleClicks: "نقرات جوجل",
+          googleImpressions: "مرات ظهور جوجل",
+          avgCTR: "متوسط CTR",
+          avgPosition2: "متوسط الموضع",
+          organicRevenue: "أرباح البحث المجاني",
+          organicConversions: "تحويلات مجانية",
+          salesGrowthPct: "نمو المبيعات"
         }
       },
       projects: {
@@ -216,6 +250,18 @@ const resources = {
             { label: 'مرات الظهور', value: '+112 ألف' },
             { label: 'عملاء عائدون', value: '52%' },
             { label: 'أرباح', value: '+237 ألف' }
+          ]
+        },
+        {
+          title: 'نمو SEO شامل لمتجر إلكتروني',
+          overview: 'استراتيجية SEO شاملة لتعزيز الجلسات المجانية وظهور البحث ونمو الإيرادات عبر جميع القنوات.',
+          challenges: ['ركود الزيارات المجانية', 'انخفاض مرات الظهور', 'ضعف مسار التحويل', 'أداء ضعيف للأرباح المجانية'],
+          strategies: ['تدقيق SEO تقني', 'توسيع الكلمات المفتاحية بالمحتوى', 'تحسين معدل التحويل', 'ضبط أداء Search Console'],
+          results: [
+            { label: 'النقرات المجانية', value: '+15.34%' },
+            { label: 'مرات الظهور المجانية', value: '+24.88%' },
+            { label: 'إجمالي المبيعات', value: 'SAR 2,701,039 (+21.83%)' },
+            { label: 'إجمالي الطلبات', value: '11,886' }
           ]
         }
       ]
