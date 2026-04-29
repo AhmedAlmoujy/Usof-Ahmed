@@ -12,8 +12,11 @@ const allImages = { ...pngImages, ...jpegImages, ...jpgImages };
 const projectData = {};
 Object.entries(allImages).forEach(([path, url]) => {
   const parts = path.split('/');
-  const projectName = parts[3]; 
-  if (projectName) {
+  const rawProjectName = parts[3]; 
+  if (rawProjectName) {
+    const words = rawProjectName.split(' ');
+    const projectName = words.length > 2 ? words.slice(0, 2).join(' ') : rawProjectName;
+    
     if (!projectData[projectName]) {
       projectData[projectName] = [];
     }
@@ -21,7 +24,20 @@ Object.entries(allImages).forEach(([path, url]) => {
   }
 });
 
-const projectNames = Object.keys(projectData);
+let projectNames = Object.keys(projectData);
+
+// Custom sorting: Beauty Store first, Sweets Store second, then alphabetically
+projectNames.sort((a, b) => {
+  const aLower = a.toLowerCase();
+  const bLower = b.toLowerCase();
+  
+  if (aLower.includes('beauty')) return -1;
+  if (bLower.includes('beauty')) return 1;
+  if (aLower.includes('sweet')) return -1;
+  if (bLower.includes('sweet')) return 1;
+  
+  return aLower.localeCompare(bLower);
+});
 
 export default function ProjectShowcase() {
   const { t, i18n } = useTranslation();
